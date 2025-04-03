@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Delicious</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://i.pinimg.com/736x/9f/20/f0/9f20f045c6a90b7d2dd0c6a6f4efa28f.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .portal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .portal h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #ff6f61;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .portal h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ddd;
+            animation: slideIn 1.2s ease-in-out;
+        }
+
+        .input-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 15px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%;
+            animation: slideIn 1.4s ease-in-out;
+        }
+
+        .input-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        .input-box i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #ff6f61;
+        }
+
+        .input-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .input-box input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .checkbox-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+            color: #ddd;
+            font-size: 0.9rem;
+            animation: slideIn 1.6s ease-in-out;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+            animation: slideIn 1.8s ease-in-out;
+        }
+
+        .portal-btn {
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+
+        .portal-btn:hover {
+            background: #ff3b2f;
+            transform: translateY(-2px);
+        }
+
+        .portal-btn:active {
+            transform: translateY(0);
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 0.9rem;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .signup-link a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 0.9rem;
+            animation: slideIn 2.2s ease-in-out;
+        }
+
+        .social-login i {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #ff6f61;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-login i:hover {
+            color: #ff3b2f;
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="portal" id="loginForm">
+            <h1>Welcome to</h1>
+            <h1 style="animation: pulse 2s infinite;">3 Delicious</h1>
+           
+
+            <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email Id or User Name" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="rememberMe"> Save Password
+                </label>
+                <a href="#" id="forgotPassword" style="color: #ff6f61; text-decoration: none;">Forgot Password?</a>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="portal-btn">Login Now</button>
+            </div>
+
+            <div class="signup-link">
+                Don't have an account? <a href="Signup.html">Signup Now</a>
+            </div>
+
+            <div class="social-login">
+                Also Login With
+                <br>
+                <i class="fab fa-google" id="googleLogin"></i>
+                <i class="fab fa-facebook" id="facebookLogin"></i>
+                <i class="fab fa-apple" id="appleLogin"></i>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Form Validation
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simulate login (replace with actual API call)
+            if (email === "asadshaikh6321@gmail.com" && password === "123") {
+                alert('Login successful! Redirecting...');
+                window.location.href = "Signup.html"; // Redirect to dashboard
+            } else {
+                alert('Invalid email or password.');
+            }
+        });
+
+        // Forgot Password
+        document.getElementById('forgotPassword').addEventListener('click', function (e) {
+            e.preventDefault();
+            const email = prompt('Please enter your email to reset your password:');
+            if (email) {
+                alert(`Password reset instructions sent to ${email}.`);
+                // Simulate sending reset instructions
+            }
+        });
+
+        // Social Login (Simulated)
+        document.getElementById('googleLogin').addEventListener('click', function () {
+            alert('Redirecting to Google login...');
+            
+        });
+
+        document.getElementById('facebookLogin').addEventListener('click', function () {
+            alert('Redirecting to Facebook login...');
+            // Redirect to Facebook OAuth
+        });
+
+        document.getElementById('appleLogin').addEventListener('click', function () {
+            alert('Redirecting to Apple login...');
+            // Redirect to Apple OAuth
+        });
+    </script>
+</body>
+</html>
